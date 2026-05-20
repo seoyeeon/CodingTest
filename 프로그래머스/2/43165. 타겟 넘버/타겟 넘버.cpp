@@ -5,7 +5,7 @@ using namespace std;
 
 int answer = 0;
 
-void dfs(vector<int> numbers, int target, int idx, int sum){
+void dfs(vector<int> &numbers, int target, int idx, int sum){
     // 모든 숫자를 다 사용했으면
     if(idx == numbers.size()){
         // target 만들었는지 확인
