@@ -49,6 +49,7 @@ int solution(int n, vector<vector<int>> costs) {
         int c = cost[2];
         
         // 사이클이 생기지 않을 때만 연결
+        // findParent(a) == findParent(b)면 a와 b는 이미 같은 그룹!(사이클됨.)
         if(findParent(a) != findParent(b)){
             unionParent(a, b);
             answer += c;
