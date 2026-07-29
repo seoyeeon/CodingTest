@@ -20,4 +20,6 @@ string solution(vector<string> participant, vector<string> completion) {
             return a.first;
         }
     }
+    
+    return "";
 }
