@@ -1,16 +1,16 @@
 #include <vector>
 #include <queue>
+
 using namespace std;
 
-int solution(vector<vector<int> > maps)
-{
+int solution(vector<vector<int>> maps){
     int n = maps.size();
     int m = maps[0].size();
     
     // 방문 체크
     vector<vector<bool>> visited(n, vector<bool>(m, false));
     
-    // 상 하 좌 우
+    // 상, 하, 좌, 우
     int dx[] = {-1, 1, 0, 0};
     int dy[] = {0, 0, -1, 1};
     
@@ -40,7 +40,6 @@ int solution(vector<vector<int> > maps)
             // 이미 방문
             if(visited[nx][ny]) continue;
             
-            
             visited[nx][ny] = true;
             
             // 이전 칸 거리 + 1
@@ -50,10 +49,10 @@ int solution(vector<vector<int> > maps)
             
         }
     }
-    // 도착 못했으면
-    if(maps[n-1][m-1] == 1){
-        return -1;
-    }
     
+    // 도착 못했으면
+    if(maps[n-1][m-1] == 1) return -1;
+            
     return maps[n-1][m-1];
+    
 }
