@@ -1,15 +1,14 @@
-SELECT 
-    CASE 
+SELECT
+    CASE
         WHEN SKILL_CODE & (
             SELECT SUM(CODE)
             FROM SKILLCODES
             WHERE CATEGORY = 'Front End'
-        ) != 0 AND
-                SKILL_CODE & (
-                    SELECT CODE
-                    FROM SKILLCODES
-                    WHERE NAME = 'Python'
-                ) != 0 THEN 'A'
+        ) != 0 AND SKILL_CODE & (
+                       SELECT CODE
+                       FROM SKILLCODES
+                       WHERE NAME = 'Python'
+                   ) != 0 THEN 'A'
         WHEN SKILL_CODE & (
             SELECT CODE
             FROM SKILLCODES
