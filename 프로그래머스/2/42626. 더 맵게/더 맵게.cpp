@@ -8,7 +8,7 @@ using namespace std;
 int solution(vector<int> scoville, int K) {
     int answer = 0;
     
-    priority_queue<int, vector<int>, greater<int>> pq; // greater -> functional 명시적으로 써주는 게 좋음.
+    priority_queue<int, vector<int>, greater<int>> pq;
     
     for(int i : scoville){
         pq.push(i);
@@ -21,14 +21,14 @@ int solution(vector<int> scoville, int K) {
         int second = pq.top();
         pq.pop();
         
-        int element = first + 2 * second;
+        int element = first + second * 2;
         
-        pq.push(element); // priority_queue는 자동으로 힙 구조 유지
+        pq.push(element);
+        
         answer++;
     }
     
     if(pq.top() < K) return -1;
-    
     
     return answer;
 }
